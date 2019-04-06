@@ -1,18 +1,23 @@
 import React from 'react'
 
-const NavBar = () => {
+import { Link, NavLink } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+
+const Navbar = () => {
   return(
     <nav className="nav-wrapper red darken-3">
       <div className="container">
         <a className="brand-logo">PokeMon Times</a>
+        <BrowserRouter>
           <ul className="right">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+              <li><Link exact to="/">Home</Link></li>
+              <li><Link exact to="/about">About</Link></li>
+              <li><Link exact to="/contact">Contact</Link></li>
           </ul>
+        </BrowserRouter>
       </div>
     </nav>
   )
 }
 
-export default NavBar
+export default Navbar
