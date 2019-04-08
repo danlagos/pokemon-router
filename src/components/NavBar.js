@@ -1,18 +1,22 @@
 import React from 'react'
 
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, withRouter } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = (props) => {
+  console.log(props);
+  setTimeout(() =>{
+    props.history.push('/about')
+  }, 2000)
   return(
     <nav className="nav-wrapper red darken-3">
       <div className="container">
         <a className="brand-logo">PokeMon Times</a>
         <BrowserRouter>
           <ul className="right">
-              <li><Link exact to="/">Home</Link></li>
-              <li><Link exact to="/about">About</Link></li>
-              <li><Link exact to="/contact">Contact</Link></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
           </ul>
         </BrowserRouter>
       </div>
@@ -20,4 +24,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default withRouter(Navbar)
