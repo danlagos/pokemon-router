@@ -5,7 +5,7 @@ class Home extends Component {
   state = {
     posts: [ ]
   }
-  compnentDidMount() {
+  componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(res => {
         console.log(res)
